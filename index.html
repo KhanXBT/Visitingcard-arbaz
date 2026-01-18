@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocate Arbaz Khan - Virtual Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        legal: {
+                            gold: '#C5A059',
+                            dark: '#0f172a',
+                            navy: '#1e3a8a',
+                            cream: '#f8f5f2'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f4f6;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #C5A059 0%, #E6C888 50%, #C5A059 100%);
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #C5A059 0%, #E6C888 50%, #C5A059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 font-sans text-slate-800">
+
+    <!-- Main Card Container -->
+    <main class="w-full max-w-md bg-white rounded-3xl overflow-hidden shadow-2xl animate-fade-in relative border border-slate-200">
+        
+        <!-- Header / Banner -->
+        <div class="h-32 bg-legal-dark relative z-0">
+            <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+            <!-- Decorative Circle -->
+            <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 z-10">
+                <div class="w-32 h-32 rounded-full bg-legal-dark border-4 border-white shadow-lg relative overflow-hidden flex items-center justify-center">
+                    <!-- Image Logic: 
+                         Strictly looks for 'profile.jpg'. 
+                         If not found, onError triggers a clean fallback icon. 
+                         No upload buttons. -->
+                    <img src="profile.jpg" alt="Advocate Arbaz Khan" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                    <!-- Fallback Icon (Hidden by default, shown if image fails) -->
+                    <i class="fas fa-user text-4xl text-legal-gold hidden"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="pt-24 pb-6 px-6 text-center relative z-20">
+            <h1 class="text-3xl font-serif font-bold text-legal-dark mb-1">Arbaz Khan</h1>
+            <p class="text-legal-gold font-medium tracking-wide uppercase text-sm mb-4">Advocate</p>
+            
+            <div class="flex justify-center gap-2 mb-6 flex-wrap">
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full border border-slate-200">District Courts</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full border border-slate-200">Delhi High Court</span>
+            </div>
+
+            <!-- Action Buttons Grid -->
+            <div class="grid grid-cols-4 gap-4 mb-8">
+                <a href="tel:+919971229502" class="flex flex-col items-center group cursor-pointer hover:opacity-80">
+                    <div class="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center mb-2 group-hover:bg-green-600 group-hover:text-white transition-all duration-300 shadow-sm border border-green-100">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <span class="text-xs text-slate-500 font-medium">Call</span>
+                </a>
+                
+                <a href="mailto:Advocatearbazkhan01@gmail.com" class="flex flex-col items-center group cursor-pointer hover:opacity-80">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-2 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm border border-blue-100">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span class="text-xs text-slate-500 font-medium">Email</span>
+                </a>
+
+                <a href="https://wa.me/919971229502" target="_blank" class="flex flex-col items-center group cursor-pointer hover:opacity-80">
+                    <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm border border-emerald-100">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                    </div>
+                    <span class="text-xs text-slate-500 font-medium">WhatsApp</span>
+                </a>
+
+                <button onclick="shareCard()" class="flex flex-col items-center group cursor-pointer hover:opacity-80">
+                    <div class="w-12 h-12 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mb-2 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 shadow-sm border border-purple-100">
+                        <i class="fas fa-share-nodes"></i>
+                    </div>
+                    <span class="text-xs text-slate-500 font-medium">Share</span>
+                </button>
+            </div>
+
+            <!-- Contact & Details List -->
+            <div class="space-y-4 text-left">
+                
+                <!-- Practice Areas -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 text-legal-gold">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-800 mb-2">Practice Areas</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600">Criminal Law</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600">Matrimonial Law</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600">Cyber Law</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600">Tribunal</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded text-slate-600">DGFT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office Address -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 group hover:bg-white hover:shadow-md transition-all cursor-pointer" onclick="openMap()">
+                    <div class="flex items-start gap-3">
+                        <div class="mt-1 text-legal-gold">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-sm font-semibold text-slate-800">Office</h3>
+                            <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                                Chamber no. 562, Lawyer Block,<br>
+                                Saket Court, New Delhi
+                            </p>
+                            <p class="text-xs text-blue-600 mt-2 font-medium flex items-center gap-1 group-hover:underline">
+                                <i class="fas fa-map-marked-alt"></i> Get Directions
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 text-center text-legal-gold"><i class="fas fa-phone-alt text-sm"></i></div>
+                            <span class="text-sm text-slate-700">+91 9971229502</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 text-center text-legal-gold"><i class="fas fa-envelope text-sm"></i></div>
+                            <span class="text-sm text-slate-700 break-all">Advocatearbazkhan01@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sticky Save Contact Button -->
+        <div class="p-6 pt-0">
+            <button onclick="downloadVCard()" class="w-full bg-legal-dark hover:bg-legal-navy text-white font-medium py-4 px-6 rounded-xl shadow-lg shadow-blue-900/20 transform transition hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer relative z-30">
+                <i class="fas fa-user-plus"></i> Save Contact
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-slate-100 py-4 text-center border-t border-slate-200">
+            <p class="text-xs text-slate-400">© 2024 Advocate Arbaz Khan. All Rights Reserved.</p>
+        </div>
+        
+        <!-- Toast Notification -->
+        <div id="toast" class="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg text-sm opacity-0 transition-opacity duration-300 pointer-events-none flex items-center gap-2 min-w-max z-[100]">
+            <i class="fas fa-check-circle text-green-400"></i>
+            <span id="toast-msg">Action Successful</span>
+        </div>
+
+    </main>
+
+    <script>
+        // Details
+        const contact = {
+            name: "Arbaz Khan",
+            title: "Advocate",
+            org: "District & High Court Delhi",
+            tel: "+919971229502",
+            email: "Advocatearbazkhan01@gmail.com",
+            address: "Chamber no. 562, Lawyer Block Saket Court New Delhi",
+            url: window.location.href
+        };
+
+        // Open Maps
+        function openMap() {
+            const query = encodeURIComponent(contact.address);
+            window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+        }
+
+        // Generate and Download vCard
+        function downloadVCard() {
+            // vCard 3.0 format
+            const vCardData = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                `FN:${contact.name}`,
+                `N:Khan;Arbaz;;Advocate;`,
+                `ORG:District & High Court Delhi`,
+                `TITLE:${contact.title}`,
+                `TEL;TYPE=CELL:${contact.tel}`,
+                `EMAIL;TYPE=WORK:${contact.email}`,
+                `ADR;TYPE=WORK:;;Chamber no. 562, Lawyer Block Saket Court;New Delhi;;;India`,
+                `NOTE:Practice Areas: Criminal Law, Matrimonial Law, Cyber Law, Tribunal, DGFT`,
+                'END:VCARD'
+            ].join('\n');
+
+            try {
+                const blob = new Blob([vCardData], { type: 'text/vcard' });
+                const url = window.URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'Advocate_Arbaz_Khan.vcf';
+                document.body.appendChild(a);
+                a.click();
+                
+                // Add delay before cleanup to ensure download starts on all browsers
+                setTimeout(() => {
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                }, 100);
+
+                showToast('Contact Saved!');
+            } catch (e) {
+                console.error("Download failed", e);
+                showToast('Error saving contact');
+            }
+        }
+
+        // Web Share API
+        async function shareCard() {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Advocate Arbaz Khan',
+                        text: 'Connect with Advocate Arbaz Khan - Criminal, Civil & Cyber Law Expert.',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Error sharing:', err);
+                    // Fallback to clipboard if share was cancelled or failed
+                    copyToClipboard();
+                }
+            } else {
+                // Fallback for desktop/unsupported browsers
+                copyToClipboard();
+            }
+        }
+
+        function copyToClipboard() {
+            const tempInput = document.createElement('input');
+            tempInput.value = window.location.href;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('Link Copied to Clipboard!');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+            toast.classList.remove('opacity-0');
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
